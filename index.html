@@ -10,10 +10,20 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="colorlist"></div>
-    <div class="colorcode">
-        <span class='rgb'></span>
-        <div class="largecolor"></div>
+    <div class="main">
+        <div class="colorlist"></div>
+        <div class="colortag">
+            <span class='rgb'></span>
+            <div class="largecolor"></div>
+            <input type="hidden" name="colorformat">
+            <div id="copy">
+                <button id='copy'>Copy</button>
+                <input type="radio" name="format" id='HEX' value='HEX' checked><label for="HEX">HEX</label>
+                <input type="radio" name="format" id='RGB' value='RGB'><label for="RGB">RGB</label>
+            </div>
+            
+        </div>
     </div>
+    
 </body>
 </html>
