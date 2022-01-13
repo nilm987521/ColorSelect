@@ -17,17 +17,7 @@ $(document).ready(function () {
         i++
     } while (i < 16 * 16 * 16)
 
-    // TODO fix hover event no trigger use another funciont
-    // $('div.color_node').hover(ColorCodeInit())
-
-    $('div.colorlist').on('hover','div.color_node',ColorCodeInit())
-
-    // $('div.color_node').hover(function () {
-    //     $('div.colorcode span')[0].innerHTML = $(this).css( "background-color");
-    //     $('div.largecolor').css('background-color',$(this).css( "background-color"));
-    //     $('div.colorcode').css('top',$(this).position().top + 10);
-    //     $('div.colorcode').css('left',$(this).position().left + 10);
-    // })
+     $('div.color_node').hover(ColorCodeInit)
 
     // TODO fix mousemove event no trigger use another funciont
     //$(window).mousemove(MouseMoveInColorList(e));
@@ -48,8 +38,6 @@ $(document).ready(function () {
         }
     });
 })
-
-
 
 function MouseMoveInColorList(e) {
     $('div.colorcode').css('display', 'inline-block')
