@@ -36,3 +36,8 @@ div.color_node:hover {
     min-width: 0.4em;
     min-height: 0.4em;
 }
+div.largecolor {
+    min-width: 5em;
+    min-height: 5em;
+    border: 1px black solid;
+}
