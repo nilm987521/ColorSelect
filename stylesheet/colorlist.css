@@ -1,0 +1,38 @@
+* {
+    margin :0px;
+    padding :0px;
+}
+
+div.colorlist {
+    display: inline-block;
+    background-color:#F09000A0;
+    margin: 0 auto;
+}
+div.colorcode {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background-color: #A0A0F0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+div.car {
+    margin :5px;
+    display: inline-block;
+    line-height:0.3em;
+}
+
+div.color_node {
+    display: inline-block;
+    min-width: 0.5em;
+    min-height: 0.5em;
+}
+
+div.color_node:hover {
+    border:0.05em white solid; 
+    border-radius: 0.5px;
+    min-width: 0.4em;
+    min-height: 0.4em;
+}
