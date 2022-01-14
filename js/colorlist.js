@@ -20,11 +20,14 @@ $(document).ready(function () {
         i++
     } while (i < 16 * 16 * 16);
     
-    // TODO FIX .on(event,func) not work completely
-    // $('div.color_node').on('hover',ColorCodeInit);
-    $('div.color_node').hover(ColorCodeInit);
+    // NOTION on沒有hover可以註冊，須改用mouseenter mouseleave
+    $('div.color_node').on("mouseenter",ColorCodeInit);
+    // $('div.color_node').hover(ColorCodeInit);
+    //-----------------------------------------
+
     $('div.color_node').click(function () {
         pinned = !pinned;
+        $('div#copy').fadeToggle(100)
         if (pinned) {
             $('div.largecolor').animate({
                 width: 150,
@@ -36,7 +39,7 @@ $(document).ready(function () {
                 height: 110,
             },100)
         }
-        $('div#copy').fadeToggle()
+        
     })
 
     $('button#copy').click(function() {
@@ -64,10 +67,10 @@ function MouseMoveInColorList(e) {
     }
     $('div.colortag').css('display', 'inline-block')
     let d = $('div.colorlist')
-    let minx = d.position().left
-    let miny = d.position().top
-    let maxx = d.width() + minx
-    let maxy = d.height() + miny
+    let minx = ($('body').width() -$('div.colorlist').width()) / 2
+    let miny = ($(window).height() - $('div.colorlist').height()) / 2
+    let maxx = ($('body').width() / 2) + ($('div.colorlist').width() / 2)
+    let maxy = ($(window).height() + $('div.colorlist').height()) / 2
 
     if (e.pageX < minx | e.pageX > maxx) {
         $('div.colortag').css('display', 'none')
@@ -76,6 +79,10 @@ function MouseMoveInColorList(e) {
     } else {
         $('div.colortag').css('display', 'inline-block')
     }
+
+    $(window).resize(ToCenter)
+
+    ToCenter()
 }
 
 // 數字轉顏色格式
@@ -93,10 +100,30 @@ function DecimalToColorFormat(number) {
 // 顏色展示區塊移動
 // TODO to make ColorTag moving smoothly...
 function ColorCodeInit() {
+    let top_v;
+    let left_v;
     if (pinned) {return}
     $('div.colortag span')[0].innerHTML = $(this).css("background-color");
     $('div.largecolor').css('background-color', $(this).css("background-color"));
-    $('div.colortag').css('top', $(this).position().top + 10);
-    $('div.colortag').css('left', $(this).position().left + 10);
+    if ( $(this).position().top > $(window).height()/2) {
+        top_v = $(this).position().top - 150
+    } else {
+        top_v = $(this).position().top + 10
+    }
+    if ($(this).position().left > $(window).width()/2) {
+        left_v = $(this).position().left - 135
+    } else {
+        left_v = $(this).position().left + 10
+    }
+    $('div.colortag').css('top', top_v);
+    $('div.colortag').css('left',left_v);
     $('button#copy')[0].value = $(this).attr('alt')
+}
+
+// 畫面致中
+function ToCenter() {
+    let body_width = $('body').width()
+    let body_height =  $(window).height()
+    $('div.colorlist').css('margin-top',(body_height-552)/2)
+    $('div.colorlist').css('margin-left',(body_width-552)/2)
 }
