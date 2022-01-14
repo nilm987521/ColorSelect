@@ -3,17 +3,13 @@
     padding :0px;
 }
 
-div.main {
-    width: 70%;
-    margin: 0 auto;
-    margin-top: 5%;
-}
-
 div.colorlist {
     display: inline-block;
     background-color:#F09000A0;
     padding: 5px;
     margin: 0 auto;
+    width: 552px;
+    height: 552px;
 }
 div.colortag {
     display: none;
@@ -49,4 +45,5 @@ div.largecolor {
 
 div#copy {
     display: none;
+    margin-top:5px;
 }
