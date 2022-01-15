@@ -90,22 +90,12 @@ function SetColorTagDisplay(e) {
     if (pinned) {
         $('div.colortag').css('display', 'inline-block')
         return;
-    }
-    $('div.colortag').css('display', 'inline-block')
-    let d = $('div.colorlist')
-    let minx = ($('body').width() -$('div.colorlist').width()) / 2
-    let miny = ($(window).height() - $('div.colorlist').height()) / 2
-    let maxx = ($('body').width() / 2) + ($('div.colorlist').width() / 2)
-    let maxy = ($(window).height() + $('div.colorlist').height()) / 2
-
-    if (e.pageX < minx | e.pageX > maxx) {
-        $('div.colortag').css('display', 'none')
-    } else if (e.pageY < miny | e.pageY > maxy) {
-        $('div.colortag').css('display', 'none')
-    } else if ($('div.color_node:hover').length == 0 & !pinned) {
-        $('div.colortag').css('display','none')
     } else {
-        $('div.colortag').css('display', 'inline-block')
+        if ($('div.color_node:hover').length == 1) {
+            $('div.colortag').css('display', 'inline-block')
+        } else if ($('div.color_node:hover').length == 0) {
+            $('div.colortag').css('display','none')
+        }
     }
 }
 
