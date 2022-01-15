@@ -8,8 +8,6 @@ div.colorlist {
     background-color:#F09000A0;
     padding: 5px;
     margin: 0 auto;
-    /* TODO FIX crash after setting width */
-    /* width: 552px; */
     height: 552px;
     z-index: 1;
 }
