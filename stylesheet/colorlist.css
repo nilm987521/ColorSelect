@@ -59,7 +59,7 @@ div.largecolor {
 div.tbg {
     width: 210px;
     min-height: 210px;
-    background-image: url("/ColorSelect/images/tbg.jpeg");
+    background-image: url("../images/tbg.jpeg");
     z-index: 1;
     border: 1px black solid;
 }
