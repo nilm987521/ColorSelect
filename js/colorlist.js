@@ -1,7 +1,4 @@
 var pinned = false;
-var HEX_COLOR_REGEX = /^\#([0-9,A-F]{2})([0-9,A-F]{2})([0-9,A-F]{2})/
-var HEXA_COLOR_REGEX = /^\#([0-9,A-F]{2})([0-9,A-F]{2})([0-9,A-F]{2})([0-9,A-F]{2})/
-
 $(document).ready(function () {
     // div.main置中，產生顏色方塊
     ToCenter()
@@ -29,8 +26,7 @@ $(document).ready(function () {
                 RGB2HEX($('div.color_node:hover').css("background-color")) 
                 + DEC2HEX(parseInt($('input.input-range').val()))
             );
-            $('span.rgb').html($('div.largecolor').css("background-color"))
-            
+            SetSpanInnerHtml($('div.largecolor').css("background-color"))
         }
     });
 
@@ -67,9 +63,8 @@ $(document).ready(function () {
     // 更改顏色透明度
     $('input.input-range').change(function() {
         let hexcolor =  RGB2HEX($('div.largecolor').css('background-color'))
-        // $('div.largecolor').css('background-color',hexcolor + DEC2HEX($(this).val()))
         SetLargeColor(hexcolor + DEC2HEX($(this).val()))
-        $('span.rgb').html($('div.largecolor').css('background-color'))
+        SetSpanInnerHtml($('div.largecolor').css('background-color'))
     }) 
 
     // 視窗大小改變時畫面致中
@@ -173,4 +168,8 @@ function DEC2HEX(number) {
 
 function SetLargeColor(HEXCOLOR) {
     $('div.largecolor').css('background-color',HEXCOLOR)
+}
+
+function SetSpanInnerHtml (str) {
+    $('span.rgb').html(str)
 }
