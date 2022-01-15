@@ -2,7 +2,7 @@
 var pinned = false;
 $(document).ready(function () {
     // div.main置中，產生顏色方塊
-    ToCenter();  
+    ToCenter();
     let i = 0;
     for (let j = 0; j < 16; j++) {
         $('div.colorlist').append(`<div id=\"car${j}\" class='car'></div>`);
@@ -11,7 +11,7 @@ $(document).ready(function () {
         }
     }
     do {
-        $(`div#car${i % 16}`).append(`<div class='color_node' 
+        $(`div#car${i % 16}`).append(`<div class='color_node'
                                             style='background-color:#${NodeColorGen(i)}'><\/div>`);
         if (i % 256 == 255) {
             $('div.car').append(`<br>`);
