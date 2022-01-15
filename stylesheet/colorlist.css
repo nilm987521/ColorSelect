@@ -40,7 +40,7 @@ div.color_node {
 }
 
 div.color_node:hover {
-    border:0.05em white solid; 
+    border:0.05em white solid;
     border-radius: 0.5px;
     min-width: 0.4em;
     min-height: 0.4em;
