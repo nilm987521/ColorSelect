@@ -8,27 +8,37 @@ div.colorlist {
     background-color:#F09000A0;
     padding: 5px;
     margin: 0 auto;
-    width: 552px;
+    /* TODO FIX crash after setting width */
+    /* width: 552px; */
     height: 552px;
+    z-index: 1;
 }
 div.colortag {
     display: none;
     position: absolute;
-    background-color: #A0A0F0;
+    background-color: white;
     padding: 10px;
     border-radius: 5px;
+    box-shadow: 5px 5px #F0F0F0AA;
+    border: 100px black;
+    z-index: 2;
+    min-width: 210px;
+    width: 210px
 }
 
 div.car {
     margin :5px;
     display: inline-block;
     line-height:0.3em;
+    z-index: 1;
+    /* position: relative; */
 }
 
 div.color_node {
     display: inline-block;
     min-width: 0.5em;
     min-height: 0.5em;
+    z-index: 1;
 }
 
 div.color_node:hover {
@@ -36,14 +46,31 @@ div.color_node:hover {
     border-radius: 0.5px;
     min-width: 0.4em;
     min-height: 0.4em;
+    z-index: 1;
 }
 div.largecolor {
-    width: 110px;
-    min-height: 110px;
+    width: 210px;
+    min-height: 210px;
+    border: 1px black solid;
+    z-index: 3;
+    position: absolute;
+}
+
+div.tbg {
+    width: 210px;
+    min-height: 210px;
+    background-image: url("/images/tbg.jpeg");
+    z-index: 1;
     border: 1px black solid;
 }
 
 div#copy {
     display: none;
     margin-top:5px;
+    z-index: 2;
+}
+
+span.rgb {
+    display: table;
+    margin: 0 auto;
 }
