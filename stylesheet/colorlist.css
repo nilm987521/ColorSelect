@@ -77,4 +77,10 @@ span.rgb {
 
 input[type="range"] {
     width:210px;
-  }
+}
+
+div.main {
+    min-width: 600px;
+    min-height: 600px;
+    margin:10px;
+}

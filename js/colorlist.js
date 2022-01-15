@@ -139,10 +139,14 @@ function SetColorTagPosition(node) {
 
 // 畫面致中
 function ToCenter() {
-    let body_width = $('body').width()
-    let body_height =  $(window).height()
-    $('div.colorlist').css('margin-top',(body_height-552)/2)
-    $('div.colorlist').css('margin-left',(body_width-552)/2)
+    if ($(window).width() > 600 & $(window).height() > 600) {
+        let body_width = $('body').width()
+        let body_height =  $(window).height()
+        $('div.colorlist').css('margin-top',(body_height-552)/2)
+        $('div.colorlist').css('margin-left',(body_width-552)/2)
+    } else {
+        $('div.colorlist').css('margin',0)
+    }
 }
 
 // 顏色RGB格式 轉換 16進制格式
